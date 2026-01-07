@@ -1,0 +1,53 @@
+[build-system]
+requires = ["setuptools>=64", "setuptools_scm[toml]>=7.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "metaox_parser"
+authors = [{ name = "Julia Tatz", email = "julia.tatz@childrens.harvard.edu" }]
+requires-python = ">=3.11"
+dynamic = ["version"]
+dependencies = ["numpy>=2", "pandas", "xarray"]
+
+[tool.setuptools_scm]
+
+[tool.ruff]
+line-length = 120
+
+[tool.ruff.lint]
+extend-select = [
+    # pycodestyle
+    "E",
+    # Pyflakes
+    "F",
+    # Pylint
+    "PL",
+    # pyupgrade
+    "UP",
+    # Ruff-specific rules
+    "RUF",
+    # NumPy-specific rules
+    "NPY",
+    # flake8-bugbear
+    "B",
+    # flake8-comprehensions
+    "C4",
+    # flake8-boolean-trap
+    "FBT",
+    # flake8-return
+    "RET",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+]
+ignore = [
+    # too-many-arguments
+    "PLR0913",
+    # magic-value-comparison
+    "PLR2004",
+    # redundant-open-modes
+    "UP015",
+    # non-pep604-annotation-optional
+    "UP045",
+]
